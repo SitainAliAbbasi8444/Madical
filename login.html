@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login — Medicare</title>
+<style>
+body{font-family:Poppins,sans-serif;background:#fcfffc;display:flex;justify-content:center;align-items:center;height:100vh;margin:0;}
+.login-card{background:#5be60a;padding:40px;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.1);width:100%;max-width:400px;}
+.login-card h2{color:#00897b;text-align:center;margin-bottom:20px;}
+.login-card input{width:100%;padding:12px;margin:10px 0;border-radius:8px;border:1px solid #ccc;}
+.login-card button{width:100%;padding:12px;background:#00897b;color:white;border:none;border-radius:8px;font-weight:600;cursor:pointer;}
+.login-card button:hover{background:#00695c;}
+.login-card .error{color:red;font-size:0.9rem;margin-top:5px;display:none;text-align:center;}
+</style>
+</head>
+<body>
+<div class="login-card">
+  <h2>Login</h2>
+  <input type="text" id="username" placeholder="Username">
+  <input type="password" id="password" placeholder="Password">
+
+  <div class="error" id="loginError">Invalid credentials</div>
+  <a href="index.html" style="
+    display:inline-block;
+    padding:12px 30px;
+    background:#0f500f;
+    color:rgb(21, 24, 20);
+    font-weight:600;
+    text-decoration:none;
+    border-radius:8px;
+    transition:0.3s;
+">Login</a>
+
+</div>
+
+<script>
+// Login button functionality
+document.getElementById('loginBtn').addEventListener('click', () => {
+  const user = document.getElementById('username').value.trim();
+  const pass = document.getElementById('password').value.trim();
+  const error = document.getElementById('loginError');
+
+  // Demo credentials: admin/admin
+  if(user === 'admin' && pass === 'admin'){
+    localStorage.setItem('isLoggedIn', 'true'); // save login state
+    window.location.href = 'dashboard.html'; // redirect to dashboard
+  } else {
+    error.style.display = 'block';
+  }
+});
+</script>
+</body>
+</html>

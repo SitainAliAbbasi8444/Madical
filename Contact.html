@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact Us • Medicare Health Center</title>
+<meta name="description" content="Contact Medicare Health Center in Lahore for appointments and healthcare support.">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins}
+body{background:#f8fdff;color:#263238;padding-top:90px}
+
+/* ===== COLOR THEME ===== */
+:root{
+  --primary:#00695c;
+  --accent:#00bfa5;
+  --dark:#004d40;
+  --light:#e0f2f1;
+  --text:#546e7a;
+}
+
+/* ===== HEADER ===== */
+header{
+  position:fixed;top:0;left:0;right:0;
+  background:#fff;
+  padding:18px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
+  z-index:1000;
+  transition:.3s;
+}
+header.scrolled{background:var(--dark)}
+header.scrolled a,
+header.scrolled .logo{color:#fff}
+
+.logo{font-size:1.7rem;font-weight:700;color:var(--primary)}
+
+.nav{display:flex;gap:30px}
+.nav a{text-decoration:none;color:#263238;font-weight:500}
+.nav a:hover,.nav a.active{color:var(--accent)}
+.mobile-toggle{display:none;font-size:2rem;cursor:pointer}
+
+/* ===== HERO ===== */
+.hero{
+  background:linear-gradient(135deg,rgba(0,105,92,.95),rgba(0,77,64,.9)),
+  url('https://images.unsplash.com/photo-1580281658629-6c64b7a9a4f5?w=1600')
+  center/cover no-repeat;
+  padding:170px 20px 120px;
+  text-align:center;
+  color:#fff;
+}
+.hero h1{font-size:3.3rem;font-weight:700}
+.hero p{font-size:1.2rem;margin-top:20px;opacity:.9}
+
+/* ===== QUICK CARDS ===== */
+.quick-cards{
+  max-width:1200px;
+  margin:-60px auto 80px;
+  padding:0 20px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:30px;
+}
+.quick-card{
+  background:#fff;
+  padding:35px;
+  border-radius:20px;
+  text-align:center;
+  box-shadow:0 20px 50px rgba(0,0,0,.08);
+  transition:.4s;
+}
+.quick-card:hover{transform:translateY(-10px)}
+.quick-card i{font-size:2.8rem;color:var(--accent)}
+.quick-card h3{margin:15px 0;color:var(--primary)}
+
+/* ===== CONTACT SECTION ===== */
+.contact-wrap{
+  max-width:1200px;
+  margin:0 auto 100px;
+  padding:0 20px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:50px;
+}
+
+.card{
+  background:#fff;
+  padding:45px;
+  border-radius:22px;
+  box-shadow:0 25px 60px rgba(0,0,0,.08);
+}
+.card h2{color:var(--primary);margin-bottom:25px}
+
+/* ===== FORM ===== */
+.form-group{margin-bottom:18px}
+label{font-weight:500;display:block;margin-bottom:6px}
+input,textarea{
+  width:100%;
+  padding:15px;
+  border-radius:12px;
+  border:1px solid #ddd;
+}
+textarea{resize:none}
+
+.btn-send{
+  width:100%;
+  padding:18px;
+  border:none;
+  border-radius:50px;
+  background:linear-gradient(135deg,var(--primary),var(--accent));
+  color:#fff;
+  font-size:1.1rem;
+  cursor:pointer;
+  transition:.3s;
+}
+.btn-send:hover{transform:translateY(-2px)}
+
+.success-message{
+  display:none;
+  color:green;
+  margin-top:15px;
+  font-weight:500;
+  text-align:center;
+}
+
+/* ===== MAP ===== */
+.map iframe{
+  width:100%;
+  height:260px;
+  border-radius:18px;
+  border:0;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  background:var(--dark);
+  color:#b2dfdb;
+  padding:70px 20px 30px;
+}
+.footer-grid{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:40px;
+}
+footer a{color:#b2dfdb;text-decoration:none}
+footer a:hover{color:#fff}
+
+/* ===== MOBILE ===== */
+@media(max-width:992px){
+  .mobile-toggle{display:block}
+  .nav{
+    position:absolute;top:100%;left:0;right:0;
+    background:#fff;
+    flex-direction:column;
+    padding:30px;
+    display:none;
+  }
+  .nav.active{display:flex}
+  .hero h1{font-size:2.5rem}
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===== HEADER ===== -->
+<header id="header">
+  <div class="logo">Medicare</div>
+  <div class="mobile-toggle" id="mobileToggle"><i class="bi bi-list"></i></div>
+  <nav class="nav" id="nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="doctors.html">Doctors</a>
+    <a href="appointment.html">Appointment</a>
+    <a href="contact.html" class="active">Contact Us</a>
+      <a href="login.html" onclick="logout()">Logout</a>
+  </nav>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <h1>Get in Touch With Us</h1>
+  <p>Compassionate care starts with communication</p>
+</section>
+
+<!-- ===== QUICK CONTACT CARDS ===== -->
+<section class="quick-cards">
+  <div class="quick-card">
+    <i class="bi bi-telephone-fill"></i>
+    <h3>Call Us</h3>
+    <p>+92 300 1234567</p>
+  </div>
+  <div class="quick-card">
+    <i class="bi bi-whatsapp"></i>
+    <h3>WhatsApp</h3>
+    <p>Instant chat support</p>
+  </div>
+  <div class="quick-card">
+    <i class="bi bi-envelope-fill"></i>
+    <h3>Email</h3>
+    <p>info@medicare.com</p>
+  </div>
+  <div class="quick-card">
+    <i class="bi bi-clock-fill"></i>
+    <h3>Working Hours</h3>
+    <p>24 / 7 Emergency</p>
+  </div>
+</section>
+
+<!-- ===== CONTACT SECTION ===== -->
+<section class="contact-wrap">
+  <div class="card">
+    <h2>Send Us a Message</h2>
+    <form id="contactForm">
+      <div class="form-group">
+        <label>Full Name</label>
+        <input required>
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" required>
+      </div>
+      <div class="form-group">
+        <label>Phone</label>
+        <input required>
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea rows="5" required></textarea>
+      </div>
+      <button class="btn-send">Send Message</button>
+      <p class="success-message" id="successMessage">Message sent successfully!</p>
+    </form>
+  </div>
+
+  <div class="card">
+    <h2>Visit Our Hospital</h2>
+    <p>📍 Main Hospital Road, Lahore</p>
+    <p>📞 +92 300 1234567</p>
+    <p>✉ info@medicare.com</p>
+    <br>
+    <div class="map">
+      <iframe src="https://maps.google.com/maps?q=Lahore%20Pakistan&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h3 style="color:white">Medicare Health Center</h3>
+      <p>Excellence in healthcare through compassion and innovation.</p>
+    </div>
+    <div>
+      <h3 style="color:white">Quick Links</h3>
+      <a href="index.html">Home</a><br>
+      <a href="about.html">About</a><br>
+      <a href="services.html">Services</a><br>
+      <a href="doctors.html">Doctors</a><br>
+      <a href="appointment.html">Appointment</a><br>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div>
+      <h3 style="color:white">Contact</h3>
+      <p>📍 Lahore, Pakistan<br>📞 +92 300 1234567<br>✉ info@medicare.com</p>
+    </div>
+    <div>
+      <h3 style="color:white;">Follow Us</h3>
+      <a href="#">Facebook</a><br>
+      <a href="#">Twitter</a><br>
+      <a href="#">Instagram</a><br>
+      <a href="#">WhatsApp</a>
+    </div>
+  </div>
+  <hr style="margin:40px 0;border-color:#00695c">
+  <p style="text-align:center;color:#80cbc4">© 2025 Medicare Health Center</p>
+</footer>
+
+<script>
+mobileToggle.onclick=()=>nav.classList.toggle("active");
+window.addEventListener("scroll",()=>header.classList.toggle("scrolled",window.scrollY>50));
+contactForm.onsubmit=e=>{
+  e.preventDefault();
+  successMessage.style.display="block";
+  e.target.reset();
+};
+</script>
+
+</body>
+</html>

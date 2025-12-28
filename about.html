@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us • Medicare Health Center</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box;font-family:Poppins}
+body{margin:0;padding-top:90px;background:#f8fdff;color:#333}
+
+/* Primary colors */
+:root {
+  --primary: #00695c;
+  --primary-light: #e0f2f1;
+  --accent: #00bfa5;
+  --dark: #004d40;
+  --text-dark: #263238;
+  --text-light: #546e7a;
+}
+
+/* HEADER */
+header{
+  position:fixed;top:0;left:0;right:0;
+  background:white;padding:18px 40px;
+  display:flex;justify-content:space-between;align-items:center;
+  box-shadow:0 10px 30px rgba(0,0,0,.08);z-index:1000;transition:.3s;
+}
+header.scrolled{background:var(--dark)}
+header.scrolled a, header.scrolled .logo{color:white}
+.logo{font-size:1.6rem;font-weight:700;color:var(--primary)}
+.nav{display:flex;gap:30px}
+.nav a{text-decoration:none;font-weight:500;color:#333;transition:.3s}
+.nav a:hover, .nav a.active{color:var(--accent)}
+.mobile-toggle{display:none;font-size:2rem;cursor:pointer;color:var(--primary)}
+
+/* HERO */
+.hero{
+  background:linear-gradient(135deg,rgba(0,105,92,.95),rgba(0,77,64,.9));
+  padding:180px 20px 120px;text-align:center;color:white;
+}
+.hero h1{font-size:3.5rem;font-weight:700}
+.hero p{font-size:1.3rem;max-width:700px;margin:30px auto;}
+
+/* CONTENT CARDS */
+.grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:40px;max-width:1200px;margin:80px auto;padding:0 20px;
+}
+.card{
+  background:white;padding:40px;border-radius:18px;text-align:center;
+  box-shadow:0 20px 50px rgba(0,0,0,.08);transition:.4s;
+}
+.card:hover{transform:translateY(-12px);box-shadow:0 30px 60px rgba(0,191,165,.15)}
+.card i{font-size:3rem;color:var(--accent);margin-bottom:20px}
+
+/* TEAM SECTION */
+.team-section {
+  max-width:1200px;margin:80px auto;padding:0 20px;
+}
+.team-section h2 {
+  text-align:center;font-size:2.8rem;font-weight:700;color:var(--primary);margin-bottom:20px;
+}
+.team-section p {
+  text-align:center;max-width:800px;margin:0 auto 60px;color:var(--text-light);font-size:1.1rem;
+}
+.team-grid {
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px;
+}
+.team-member {
+  background:white;border-radius:18px;overflow:hidden;
+  box-shadow:0 20px 50px rgba(0,0,0,.08);transition:.4s;text-align:center;
+}
+.team-member:hover {transform:translateY(-12px);box-shadow:0 30px 60px rgba(0,191,165,.15)}
+.team-member img {width:100%;height:350px;object-fit:cover;}
+.team-info {padding:30px;}
+.team-info h3 {font-size:1.5rem;margin:0 0 8px;color:var(--primary);}
+.team-info h4 {font-size:1.1rem;color:var(--accent);margin:0 0 15px;font-weight:500;}
+.team-info p {color:var(--text-light);font-size:1rem;line-height:1.6;}
+
+/* FOOTER */
+.footer{
+  background:var(--dark);color:#b2dfdb;padding:70px 20px;
+}
+.footer a{color:#b2dfdb;text-decoration:none}
+.footer a:hover{color:white}
+.footer-grid{
+  max-width:1200px;margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:40px;
+}
+
+/* ANIMATION */
+.animate{opacity:0;transform:translateY(50px);transition:1s}
+.animate.visible{opacity:1;transform:none}
+.delay-1{transition-delay:.1s}
+.delay-2{transition-delay:.2s}
+.delay-3{transition-delay:.3s}
+.delay-4{transition-delay:.4s}
+.delay-5{transition-delay:.5s}
+.delay-6{transition-delay:.6s}
+
+/* MOBILE */
+@media(max-width:992px){
+  .mobile-toggle{display:block}
+  .nav{
+    position:absolute;top:100%;left:0;right:0;background:white;
+    flex-direction:column;padding:30px;display:none;
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
+  }
+  .nav.active{display:flex}
+  .nav a{color:#333}
+  .nav a:hover, .nav a.active{color:var(--accent)}
+  .hero h1{font-size:2.6rem}
+  .team-member img{height:300px;}
+}
+</style>
+</head>
+<body>
+
+ 
+ <header id="header">
+  <div class="logo">Medicare</div>
+  <div class="mobile-toggle" id="mobileToggle"><i class="bi bi-list"></i></div>
+  <nav class="nav" id="nav">
+    <a href="index.html">Home</a>
+    <a href="about.html" class="active">About</a>
+    <a href="services.html">Services</a>
+    <a href="doctors.html">Doctors</a>
+    <a href="appointment.html">Appointment</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="login.html">Login</a>
+  </nav>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <h1 class="animate">About Medicare Health Center</h1>
+  <p class="animate delay-1">Trusted healthcare with compassion, advanced technology, and patient-centered excellence.</p>
+</section>
+
+<!-- ===== INFO / CARDS ===== -->
+<section class="grid">
+  <div class="card animate delay-1">
+    <i class="bi bi-heart-pulse-fill"></i>
+    <h3>Our Mission</h3>
+    <p>Delivering high-quality, accessible healthcare with empathy, integrity, and professionalism.</p>
+  </div>
+  <div class="card animate delay-2">
+    <i class="bi bi-eye-fill"></i>
+    <h3>Our Vision</h3>
+    <p>To lead in healthcare innovation, blending cutting-edge technology with compassionate, personalized care.</p>
+  </div>
+  <div class="card animate delay-3">
+    <i class="bi bi-award-fill"></i>
+    <h3>Our Values</h3>
+    <p>Integrity • Excellence • Innovation • Compassion • Patient-First Care</p>
+  </div>
+</section>
+
+<!-- ===== TEAM MEMBERS SECTION ===== -->
+<section class="team-section">
+  <h2 class="animate">Meet Our Leadership Team</h2>
+  <p class="animate delay-1">Our dedicated professionals bring years of expertise and a shared commitment to exceptional patient care.</p>
+
+  <div class="team-grid">
+    <div class="team-member animate delay-1">
+      <img src="https://images.stockcake.com/public/a/9/c/a9cce9b1-c475-45be-af75-6cd905a7d539_large/smiling-female-doctor-stockcake.jpg" alt="Dr. Ahmed Khan">
+      <div class="team-info">
+        <h3>Dr. Ahmed Khan</h3>
+        <h4>Chief Medical Officer</h4>
+        <p>With over 25 years of experience, Dr. Khan leads our clinical team with a focus on innovative treatments and patient safety.</p>
+      </div>
+    </div>
+
+    <div class="team-member animate delay-2">
+      <img src="https://thumbs.dreamstime.com/b/portrait-smiling-young-female-doctor-wearing-white-coat-medical-healthcare-professional-concept-398674441.jpg" alt="Dr. Sarah Malik">
+      <div class="team-info">
+        <h3>Dr. Sarah Malik</h3>
+        <h4>Head of Pediatrics</h4>
+        <p>A renowned pediatrician with 18 years of experience, Dr. Malik ensures the youngest patients receive the best treatment.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <h3 style="color:white;">Medicare Health Center</h3>
+      <p>Excellence in healthcare through compassion, trust, and modern innovation.</p>
+    </div>
+    <div>
+      <h3 style="color:white;">Quick Links</h3>
+      <a href="index.html">Home</a><br>
+      <a href="about.html">About</a><br>
+      <a href="services.html">Services</a><br>
+      <a href="doctors.html">Doctors</a><br>
+      <a href="appointment.html">Appointment</a><br>
+      <a href="contact.html">Contact Us</a>
+    </div>
+    <div>
+      <h3 style="color:white;">Contact</h3>
+      <p>📍 Main Hospital Road, Lahore<br>📞 +92 300 1234567<br>✉ info@medicare.com</p>
+    </div>
+    <div>
+      <h3 style="color:white;">Follow Us</h3>
+      <a href="#">Facebook</a><br>
+      <a href="#">Twitter</a><br>
+      <a href="#">Instagram</a><br>
+      <a href="#">WhatsApp</a>
+    </div>
+  </div>
+  <hr style="margin:40px 0;border-color:#00695c;">
+  <p style="text-align:center;color:#80cbc4;">© 2025 Medicare Health Center. All rights reserved.</p>
+</footer>
+
+<script>
+/* Mobile toggle */
+const mobileToggle = document.getElementById("mobileToggle");
+const nav = document.getElementById("nav");
+const header = document.getElementById("header");
+
+if(mobileToggle){
+  mobileToggle.onclick = () => nav.classList.toggle("active");
+}
+
+/* Scroll effect */
+window.addEventListener("scroll", () => {
+  header.classList.toggle("scrolled", window.scrollY > 50);
+});
+
+/* Animate elements when they enter viewport */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) e.target.classList.add("visible");
+  });
+}, { threshold: 0.2 });
+
+document.querySelectorAll(".animate").forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

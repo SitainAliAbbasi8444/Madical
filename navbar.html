@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicare Navbar</title>
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+        }
+
+        #header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .nav a.active {
+            color: #007bff;
+        }
+
+        /* Mobile Toggle */
+        .mobile-toggle {
+            display: none;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: block;
+            }
+
+            .nav {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                width: 220px;
+                height: 100vh;
+                background: #fff;
+                flex-direction: column;
+                padding: 20px;
+                gap: 15px;
+                transition: 0.3s;
+                box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+            }
+
+            .nav.show {
+                right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header id="header">
+    <div class="logo">Medicare</div>
+
+    <!-- Mobile Toggle Button -->
+    <div class="mobile-toggle" id="mobileToggle">
+        <i class="bi bi-list"></i>
+    </div>
+
+    <nav class="nav" id="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="services.html">Services</a>
+        <a href="doctors.html">Doctors</a>
+        <a href="appointment.html">Appointment</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="login.html" onclick="logout()">Logout</a>
+    </nav>
+</header>
+
+<!-- jQuery CDN -->
+<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    // Mobile toggle functionality
+    $(document).ready(function() {
+        $("#mobileToggle").click(function() {
+            $("#nav").toggleClass("show");
+        });
+    });
+
+    // Example logout function
+    function logout() {
+        alert("You are logged out!");
+    }
+</script> -->
+
+</body>
+</html>
